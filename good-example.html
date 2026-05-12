@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tranquil Services - Contact Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+<style>
+  /* Following Visual Rules: Muted palettes, safe contrast, off-white bg */
+  :root {
+    --bg-color: #f8f5ee; 
+    --text-color: #2c3a45; 
+    --muted-text: #4b5566;
+    --accent-color: #7a9170; 
+    --border-color: rgba(31,41,55,0.15);
+    --error-bg: #fdf2f2;
+    --error-border: #c47a7a;
+    --card-bg: #ffffff;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 18px; /* 16-18px min */
+    line-height: 1.6; /* 1.5-1.7 line height */
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left; /* Never justified */
+  }
+
+  /* Honor prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  .container {
+    max-width: 65ch; /* 60-75 characters max */
+    width: 100%;
+  }
+
+  h1, h2 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Following Layout Rules: Visible structure, chunked content */
+  .controls-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .control-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--muted-text);
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  nav {
+    margin-bottom: 2rem;
+  }
+  
+  nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .icon-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Following Content Rules: Chunked content lists */
+  .process-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .process-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .process-list .material-icons-round {
+    color: var(--accent-color);
+  }
+
+  /* Following Form Rules: Single column, clear labels, grouped fields */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.04);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  legend {
+    font-weight: 700;
+    padding: 0 8px;
+    color: var(--text-color);
+  }
+
+  .radio-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0.8rem;
+  }
+
+  .radio-group input {
+    width: auto;
+  }
+
+  label {
+    font-weight: 700;
+  }
+
+  .radio-group label {
+    font-weight: 400; /* Normal weight for radio labels */
+  }
+
+  .help-text {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+  }
+
+  input[type="text"], 
+  input[type="email"], 
+  textarea {
+    padding: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button.submit-btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 1rem;
+  }
+
+  .helpful-error {
+    background-color: var(--error-bg);
+    border-left: 4px solid var(--error-border);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="controls-bar" aria-label="Accessibility settings">
+    <button class="control-btn icon-text">
+      <span class="material-icons-round" style="font-size: 1.2rem;">dark_mode</span>
+      Toggle Dark Mode
+    </button>
+    <button class="control-btn icon-text">
+      <span class="material-icons-round" style="font-size: 1.2rem;">format_size</span>
+      Larger Text
+    </button>
+  </div>
+
+  <nav>
+    <div class="icon-text">
+      <span class="material-icons-round">home</span>
+      <a href="/">Home</a> 
+      <span>/</span>
+      <span aria-current="page">Contact Support</span>
+    </div>
+  </nav>
+
+  <h1>Contact our support team</h1>
+  <p>Please fill out the form below to send us a message. There is no time limit to complete this form. Take as much time as you need.</p>
+
+  <h2>What happens next?</h2>
+  <ul class="process-list">
+    <li>
+      <span class="material-icons-round">mark_email_read</span> 
+      <span>We receive your message securely.</span>
+    </li>
+    <li>
+      <span class="material-icons-round">person_search</span> 
+      <span>A support team member reads your question.</span>
+    </li>
+    <li>
+      <span class="material-icons-round">reply</span> 
+      <span>We will reply to your preferred contact method within two business days.</span>
+    </li>
+  </ul>
+
+  <div class="helpful-error" role="alert">
+    <div class="icon-text" style="color: var(--error-border); font-weight: 700; margin-bottom: 0.5rem;">
+      <span class="material-icons-round">error_outline</span>
+      We need more information
+    </div>
+    <p style="margin: 0; font-size: 0.9rem;">We could not send your message because the email address is missing an "@" symbol. Please correct the email address and click Submit again.</p>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <div class="help-text" id="nameHelp">Please enter your first and last name.</div>
+      <input type="text" id="fullName" name="fullName" aria-describedby="nameHelp">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <div class="help-text" id="emailHelp">Example: name@website.com</div>
+      <input type="email" id="email" name="email" aria-describedby="emailHelp">
+    </div>
+
+    <fieldset>
+      <legend>Preferred contact method</legend>
+      <div class="help-text">Choose how you would like us to reply to you.</div>
+      
+      <div class="radio-group">
+        <input type="radio" id="contactEmail" name="contactMethod" value="email" checked>
+        <label for="contactEmail">Email</label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="contactPhone" name="contactMethod" value="phone">
+        <label for="contactPhone">Phone</label>
+      </div>
+    </fieldset>
+
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <div class="help-text" id="messageHelp">Describe your question or problem in detail.</div>
+      <textarea id="message" name="message" rows="6" aria-describedby="messageHelp"></textarea>
+    </div>
+
+    <button type="button" class="submit-btn icon-text">
+      <span class="material-icons-round">send</span>
+      Submit Message
+    </button>
+  </form>
+</div>
+
+</body>
+</html>
