@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- BROKEN: Title is useless -->
+  <title>CATS!!!! CAFE!!!! CLICK!!!</title>
+
+  <!-- BROKEN: 6 conflicting fonts loaded simultaneously -->
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Creepster&family=Fredoka+One&family=Pacifico&family=Permanent+Marker&family=Ribeye+Marrow&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════
+       THE MOST HOSTILE WEBSITE EVER MADE
+       Every single autism-friendly rule: DESTROYED
+       ══════════════════════════════════════════════ */
+
+    /* ─── BROKEN: Custom cursor ─── */
+    * { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='28' font-size='28'>🐱</text></svg>") 16 16, auto; }
+    a, button { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='28' font-size='28'>🐾</text></svg>") 16 16, pointer; }
+
+    /* ─── Keyframes: an absolute nightmare ─── */
+    @keyframes seizure    { 0%{background:#ff0000}10%{background:#00ff00}20%{background:#0000ff}30%{background:#ffff00}40%{background:#ff00ff}50%{background:#00ffff}60%{background:#ff8800}70%{background:#8800ff}80%{background:#00ff88}90%{background:#ff0088}100%{background:#ff0000} }
+    @keyframes blink      { 0%,49%{opacity:1}50%,100%{opacity:0} }
+    @keyframes spin       { to{transform:rotate(360deg)} }
+    @keyframes spin-rev   { to{transform:rotate(-360deg)} }
+    @keyframes shake      { 0%,100%{transform:translate(0)}10%{transform:translate(-15px,10px)rotate(-5deg)}20%{transform:translate(15px,-10px)rotate(5deg)}30%{transform:translate(-10px,15px)}40%{transform:translate(10px,-15px)}50%{transform:translate(-20px,5px)rotate(-3deg)}60%{transform:translate(20px,-5px)rotate(3deg)}70%{transform:translate(-5px,20px)}80%{transform:translate(5px,-20px)}90%{transform:translate(-8px,8px)} }
+    @keyframes marquee    { from{transform:translateX(100vw)} to{transform:translateX(-100%)} }
+    @keyframes marquee2   { from{transform:translateX(-100%)} to{transform:translateX(100vw)} }
+    @keyframes zoom       { 0%,100%{transform:scale(1)}50%{transform:scale(1.5)} }
+    @keyframes colortext  { 0%{color:#ff0000}16%{color:#ff8800}33%{color:#ffff00}50%{color:#00ff00}66%{color:#0000ff}83%{color:#ff00ff}100%{color:#ff0000} }
+    @keyframes bounce     { 0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)} }
+    @keyframes float      { 0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(180deg)} }
+    @keyframes carousel   { 0%,19%{left:0%}20%,39%{left:-100%}40%,59%{left:-200%}60%,79%{left:-300%}80%,99%{left:-400%}100%{left:0%} }
+    @keyframes jelly      { 0%,100%{transform:scale(1,1)}25%{transform:scale(0.9,1.1)}50%{transform:scale(1.1,0.9)}75%{transform:scale(0.95,1.05)} }
+    @keyframes flyIn      { from{transform:translateY(-100vh) rotate(720deg); opacity:0} to{transform:translateY(0) rotate(0deg); opacity:1} }
+    @keyframes glitch     { 0%,90%,100%{clip-path:none; transform:none} 91%{clip-path:polygon(0 10%,100% 10%,100% 20%,0 20%); transform:translateX(-5px)} 93%{clip-path:polygon(0 60%,100% 60%,100% 70%,0 70%); transform:translateX(5px)} 95%{clip-path:polygon(0 30%,100% 30%,100% 50%,0 50%); transform:translateX(-3px)} }
+    @keyframes rainbow-bg { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+    @keyframes wiggle     { 0%,100%{transform:rotate(0deg)}25%{transform:rotate(10deg)}75%{transform:rotate(-10deg)} }
+    @keyframes typewriter { from{width:0} to{width:100%} }
+    @keyframes cursor-blink { 50%{border-color:transparent} }
+    @keyframes explode    { 0%{transform:scale(0);opacity:1}100%{transform:scale(3);opacity:0} }
+
+    /* BROKEN: No prefers-reduced-motion at all — everything plays forever */
+
+    /* BROKEN: Background is animated seizure-inducing rainbow */
+    html {
+      font-size: 11px; /* tiny */
+      animation: seizure 0.3s infinite; /* full page flashing */
+    }
+
+    body {
+      /* BROKEN: Comic Sans + multiple conflicting fonts */
+      font-family: 'Creepster', 'Comic Sans MS', 'Papyrus', cursive;
+      /* BROKEN: bright white */
+      background: #ffffff;
+      /* BROKEN: pure black = 21:1 max contrast */
+      color: #000000;
+      /* BROKEN: justified text everywhere */
+      text-align: justify;
+      margin: 0;
+      overflow-x: hidden;
+      /* BROKEN: outline removed */
+      outline: none;
+    }
+
+    /* BROKEN: Focus ring destroyed */
+    *:focus { outline: none !important; box-shadow: none !important; }
+
+    /* ─── HEADER: total chaos ─── */
+    .bad-header {
+      background: linear-gradient(90deg, #ff0000, #ff7700, #ffff00, #00ff00, #0000ff, #ff00ff, #ff0000);
+      background-size: 400% 400%;
+      animation: rainbow-bg 1s linear infinite, shake 2s infinite;
+      padding: 5px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+    .bad-header h1 {
+      font-family: 'Ribeye Marrow', fantasy;
+      font-size: 28px; /* inconsistent */
+      color: #ffffff;
+      text-shadow: 3px 3px 0 #000, -3px -3px 0 #ff0000, 5px 5px 0 #00ff00;
+      animation: zoom 0.5s infinite, colortext 0.3s infinite, glitch 3s infinite;
+      text-transform: uppercase;
+    }
+
+    /* BROKEN: Nav is hover-only dropdown, also uses wrong font */
+    nav.bad-nav {
+      background: #000000;
+      display: flex;
+      gap: 0;
+      padding: 0;
+    }
+    nav.bad-nav > ul { list-style:none; display:flex; margin:0; padding:0; }
+    nav.bad-nav a {
+      display: block; color: #ffff00; padding: 5px 8px;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 10px; text-decoration: none;
+      animation: blink 2s infinite;
+      /* BROKEN: different color on each link using nth-child */
+    }
+    nav.bad-nav > ul > li:nth-child(1) a { color: #ff0000; }
+    nav.bad-nav > ul > li:nth-child(2) a { color: #00ff00; }
+    nav.bad-nav > ul > li:nth-child(3) a { color: #ff00ff; }
+    nav.bad-nav > ul > li:nth-child(4) a { color: #00ffff; }
+    /* BROKEN: Hover-only submenu */
+    nav.bad-nav > ul > li { position:relative; }
+    nav.bad-nav > ul > li > ul { display:none; position:absolute; top:100%; left:0; background:#800080; min-width:120px; z-index:99; }
+    nav.bad-nav > ul > li:hover > ul { display:block; }
+    nav.bad-nav > ul > li > ul a { font-size:9px; color:#00ff00; padding:3px 8px; }
+
+    /* BROKEN: Ticker / marquees (multiple, in opposite directions) */
+    .ticker-wrap { overflow:hidden; background:#000; border-top:3px solid #ff0000; border-bottom:3px solid #ff0000; }
+    .ticker { display:inline-block; white-space:nowrap; animation:marquee 4s linear infinite; font-family:'Boogaloo',cursive; font-size:14px; font-weight:bold; color:#ff0000; }
+    .ticker2 { display:inline-block; white-space:nowrap; animation:marquee2 5s linear infinite; font-family:'Fredoka One',cursive; font-size:12px; color:#00ff00; background:#000080; padding:2px 0; }
+
+    /* BROKEN: Layout grid is 4 columns with no logical order */
+    .chaos-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr 1fr 120px;
+      gap: 2px;
+      padding: 2px;
+      background: #ff00ff;
+    }
+
+    /* BROKEN: Each column has random fonts, sizes, colors */
+    .col1 { background: #fffacd; padding: 4px; font-family: 'Pacifico', cursive; font-size: 9px; }
+    .col2 { background: #e0ffe0; padding: 4px; font-family: 'Fredoka One', cursive; font-size: 12px; }
+    .col3 { background: #ffe0e0; padding: 4px; font-family: 'Boogaloo', cursive; font-size: 11px; }
+    .col4 { background: #e0e0ff; padding: 4px; font-family: 'Comic Sans MS', cursive; font-size: 8px; }
+
+    /* BROKEN: Headings are ALL CAPS, inconsistent sizes, decorative fonts */
+    h1,h2,h3 { text-transform: uppercase; font-family:'Creepster', fantasy; }
+    h2 { font-size:14px; animation:colortext 0.5s infinite; }
+    h3 { font-size:11px; animation:blink 1s infinite; }
+
+    /* BROKEN: Paragraph text — justified, no max-width, tiny, cramped */
+    p { text-align:justify; font-size:10px; line-height:1.1; margin:1px 0; color:#000; }
+
+    /* BROKEN: Auto-rotating carousel (no controls) */
+    .carousel-container { overflow:hidden; position:relative; height:100px; background:#000; border:5px solid #ff0000; animation:shake 3s infinite; }
+    .carousel-track { display:flex; position:absolute; width:500%; animation:carousel 3s steps(1) infinite; }
+    .carousel-slide { width:20%; flex-shrink:0; padding:5px; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:13px; }
+    .carousel-slide:nth-child(1) { background:#ff0000; color:#ffff00; font-family:'Pacifico',cursive; }
+    .carousel-slide:nth-child(2) { background:#00ff00; color:#ff00ff; font-family:'Creepster',cursive; }
+    .carousel-slide:nth-child(3) { background:#0000ff; color:#ffff00; font-family:'Boogaloo',cursive; }
+    .carousel-slide:nth-child(4) { background:#ff00ff; color:#00ff00; font-family:'Fredoka One',cursive; }
+    .carousel-slide:nth-child(5) { background:#ffff00; color:#0000ff; font-family:'Permanent Marker',cursive; }
+
+    /* BROKEN: Floating spinning emojis in the background */
+    .floating-cats { position:fixed; inset:0; pointer-events:none; z-index:1; overflow:hidden; }
+    .float-cat { position:absolute; font-size:30px; animation:float 2s infinite; opacity:0.4; }
+
+    /* BROKEN: CTA buttons — blink, animate, impossible to focus */
+    .crazy-btn {
+      font-family:'Permanent Marker',cursive;
+      font-size:11px;
+      font-weight:bold;
+      padding:4px 8px;
+      border:3px solid #000;
+      cursor:pointer;
+      animation:jelly 0.5s infinite, colortext 0.5s infinite;
+      background:#ff0000;
+      color:#ffff00;
+      /* BROKEN: moves away on hover */
+    }
+    .crazy-btn:hover { transform: translate(30px, -20px) rotate(45deg) scale(1.5); transition:none; }
+
+    /* BROKEN: Popup — even more aggressive than before */
+    .mega-popup {
+      position:fixed; inset:0; z-index:99999;
+      display:flex; align-items:center; justify-content:center;
+      animation:seizure 0.2s infinite;
+    }
+    .mega-popup-box {
+      background:#ffff00; border:8px solid #ff0000;
+      padding:25px; max-width:420px; text-align:center;
+      animation:shake 0.3s infinite, flyIn 0.5s ease-out;
+      position:relative;
+    }
+    .mega-popup-box h2 { font-family:'Creepster',cursive; font-size:30px; animation:colortext 0.2s infinite; text-transform:uppercase; }
+    /* BROKEN: Close button is 1px × 1px and invisible */
+    .popup-close-real {
+      position:absolute; top:2px; right:2px;
+      width:10px; height:10px; overflow:hidden;
+      background:rgba(0,0,0,0); color:rgba(0,0,0,0);
+      border:none; font-size:1px; cursor:pointer;
+    }
+    /* Fake close button that doesn't work */
+    .popup-fake-close {
+      display:block; margin-top:10px;
+      font-size:9px; color:#888; background:none; border:none;
+      font-family:'Comic Sans MS',cursive; cursor:pointer;
+      animation:blink 2s infinite;
+    }
+
+    /* BROKEN: Spinning decorations everywhere */
+    .spinner { display:inline-block; animation:spin 1s linear infinite; font-size:25px; }
+    .spinner-rev { display:inline-block; animation:spin-rev 0.7s linear infinite; font-size:20px; }
+    .bouncer { display:inline-block; animation:bounce 0.6s infinite; }
+    .wiggler { display:inline-block; animation:wiggle 0.4s infinite; }
+
+    /* BROKEN: Table — unreadable due to garish colors */
+    table { border-collapse:collapse; width:100%; font-size:8px; font-family:'Comic Sans MS',cursive; }
+    td,th { border:2px solid #000; padding:2px; }
+    th { background:#800080; color:#ffff00; text-transform:uppercase; animation:blink 1s infinite; }
+    tr:nth-child(2) td { background:#ff0000; color:#ffff00; }
+    tr:nth-child(3) td { background:#00ff00; color:#0000ff; }
+    tr:nth-child(4) td { background:#0000ff; color:#ffff00; }
+    tr:nth-child(5) td { background:#ff00ff; color:#00ff00; }
+    tr:nth-child(6) td { background:#ffff00; color:#ff0000; animation:blink 0.3s infinite; }
+    tr:nth-child(7) td { background:#00ffff; color:#ff0000; }
+
+    /* BROKEN: Form — every rule violated */
+    .bad-form-wrap { border:5px dashed #ff0000; padding:5px; background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><text y='30' font-size='25'>🐾</text></svg>") repeat; }
+    .bad-form { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:3px; }
+    .bad-form input, .bad-form textarea, .bad-form select {
+      font-family:'Comic Sans MS',cursive; font-size:9px;
+      padding:2px; border:2px solid #ff0000; width:100%;
+      background:#fffacd;
+    }
+    .bad-form input:focus, .bad-form textarea:focus { outline:none; background:#ff00ff; }
+
+    /* BROKEN: timer */
+    .form-timer { font-size:36px; color:#ff0000; font-family:'Creepster',cursive; animation:zoom 0.5s infinite,colortext 0.2s infinite; text-align:center; }
+    .form-timer.panic { animation:shake 0.1s infinite, seizure 0.1s infinite; }
+
+    /* BROKEN: invisible low-contrast text */
+    .ghost-text { color:#f5f5f5; font-size:8px; background:#ffffff; }
+
+    /* BROKEN: links look like normal text */
+    a { color:#000; text-decoration:none; }
+    a:hover { color:#000; }
+
+    /* BROKEN: autoplay video simulation */
+    .fake-video {
+      background:#000; height:80px; position:relative; overflow:hidden;
+      border:4px solid #ff0000; animation:shake 1s infinite;
+    }
+    .fake-video-content {
+      color:#ff0000; font-size:11px; font-weight:bold; text-align:center;
+      animation:blink 0.3s infinite; padding:5px;
+      font-family:'Permanent Marker',cursive;
+    }
+    .video-noise {
+      position:absolute; inset:0;
+      background:repeating-linear-gradient(0deg,rgba(255,255,0,0.1),rgba(255,255,0,0.1) 2px,transparent 2px,transparent 4px);
+      animation:marquee 0.05s linear infinite;
+    }
+
+    /* BROKEN: sidebar with exploding elements */
+    .sidebar-chaos { background:#000080; color:#ffff00; padding:4px; font-size:9px; }
+    .sidebar-chaos p { color:#ff0000; animation:blink 0.5s infinite; text-align:center; font-size:9px; line-height:1; margin:2px 0; }
+
+    /* BROKEN: Footer has ~0 contrast */
+    .bad-footer { background:#ffffff; color:#eeeeee; font-size:7px; text-align:center; padding:3px; font-family:'Comic Sans MS',cursive; }
+
+    /* BROKEN: random text randomly positioned */
+    .random-text-1 { position:fixed; bottom:80px; left:20px; font-size:50px; animation:float 1.5s infinite; z-index:100; pointer-events:none; }
+    .random-text-2 { position:fixed; top:200px; right:10px; font-size:40px; animation:spin 2s linear infinite; z-index:100; pointer-events:none; }
+    .random-text-3 { position:fixed; bottom:200px; right:30px; font-size:35px; animation:bounce 0.8s infinite; z-index:100; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+<!-- BROKEN: floating background cats (constant distraction) -->
+<div class="floating-cats" aria-hidden="true">
+  <span class="float-cat" style="top:10%;left:5%; animation-delay:0s; animation-duration:1.3s;">🐱</span>
+  <span class="float-cat" style="top:30%;left:15%; animation-delay:0.3s; animation-duration:1.8s;">🐈</span>
+  <span class="float-cat" style="top:60%;left:80%; animation-delay:0.6s; animation-duration:1.5s;">🐈‍⬛</span>
+  <span class="float-cat" style="top:80%;left:40%; animation-delay:0.2s; animation-duration:2s;">🐾</span>
+  <span class="float-cat" style="top:15%;left:70%; animation-delay:0.8s; animation-duration:1.2s;">🐱</span>
+  <span class="float-cat" style="top:50%;left:50%; animation-delay:0.5s; animation-duration:1.7s;">😸</span>
+  <span class="float-cat" style="top:70%;left:20%; animation-delay:1s; animation-duration:1.4s;">😹</span>
+  <span class="float-cat" style="top:40%;left:90%; animation-delay:0.1s; animation-duration:1.6s;">🙀</span>
+</div>
+
+<!-- BROKEN: Random fixed elements polluting the screen -->
+<div class="random-text-1" aria-hidden="true">🎪</div>
+<div class="random-text-2" aria-hidden="true">⚡</div>
+<div class="random-text-3" aria-hidden="true">🔥</div>
+
+<!-- BROKEN: Mega popup even more extreme than before -->
+<div class="mega-popup" id="megaPopup">
+  <div class="mega-popup-box">
+    <!-- Real close: invisible 1×1 pixel -->
+    <button class="popup-close-real" onclick="document.getElementById('megaPopup').remove()" aria-label="close">x</button>
+
+    <h2>🐱🐱🐱 OMGGG CATS!!!! 🐱🐱🐱</h2>
+    <div style="font-size:40px; animation:spin 0.5s linear infinite; display:inline-block;">🐱</div>
+    <div style="font-size:40px; animation:spin-rev 0.3s linear infinite; display:inline-block;">🐾</div>
+    <div style="font-size:40px; animation:bounce 0.4s infinite; display:inline-block;">😸</div>
+    <p style="font-size:14px; animation:colortext 0.2s infinite; font-family:'Creepster',cursive; font-weight:bold; text-align:center; margin:8px 0;">
+      YOU FOUND THE BEST CAT CAFE IN THE UNIVERSE!!!<br>
+      <span style="font-size:22px; animation:zoom 0.3s infinite; display:inline-block;">BOOK NOW OR LOSE YOUR SPOT FOREVER!!!</span>
+    </p>
+    <p style="font-size:9px; animation:blink 0.2s infinite; color:#ff0000; text-align:center;">
+      ⚠️ OFFER EXPIRES IN 10 SECONDS — CLICK NOW OR DEEPLY REGRET IT ⚠️
+    </p>
+    <!-- Fake close — visible but doesn't close -->
+    <button class="popup-fake-close" onclick="this.textContent='haha nope 😈'; this.style.animation='shake 0.1s infinite'">
+      maybe close? (click to find out)
+    </button>
+    <!-- Second fake close -->
+    <button class="popup-fake-close" onclick="document.getElementById('megaPopup').style.animation='shake 0.05s infinite, seizure 0.1s infinite'">
+      no wait THIS one closes it
+    </button>
+  </div>
+</div>
+
+<!-- BROKEN: Seizure-inducing header -->
+<div class="bad-header">
+  <h1>🐱 CATS!!!! CAFE!!!! BEST EVER!!!! 🐱</h1>
+  <div style="font-size:9px; font-family:'Comic Sans MS'; animation:colortext 0.5s infinite;">
+    <span class="spinner">⭐</span>
+    WE HAVE CATS AND COFFEE AND STUFF
+    <span class="spinner-rev">⭐</span>
+  </div>
+</div>
+
+<!-- BROKEN: Double marquee in opposite directions -->
+<div class="ticker-wrap">
+  <div class="ticker">🐱 CATS CATS CATS!!! 🐾 COME NOW!!! 😸 LIMITED SEATS!!! 🙀 WHAT ARE YOU WAITING FOR?!?! 🐈 THE CATS MISS YOU!!! 💀 BOOK OR ELSE!!! 🐱 CATS CATS CATS!!!</div>
+</div>
+<div class="ticker-wrap" style="background:#000080;">
+  <div class="ticker2">😹 COFFEE IS HOT!!! ☕ OR IS IT?! 🔥 TERMS APPLY!!! ⚠️ NO REFUNDS!!! 😈 JUST KIDDING MAYBE!!! 🐾 COME IN!!! 😹 COFFEE IS HOT!!!</div>
+</div>
+
+<!-- BROKEN: Hover-only nav with no keyboard access, no current page indicator -->
+<nav class="bad-nav" aria-hidden="true"><!-- hidden from SR because it's broken anyway -->
+  <ul>
+    <li><a href="#">HOME</a></li>
+    <li>
+      <a href="#">CATS ▼</a>
+      <ul>
+        <li><a href="#">Fluffy cats</a></li>
+        <li><a href="#">Fat cats</a></li>
+        <li><a href="#">Angry cats</a></li>
+      </ul>
+    </li>
+    <li><a href="#">MENU? 🍕</a></li>
+    <li><a href="#">BOOK?? 📅</a></li>
+    <!-- BROKEN: Icon-only items -->
+    <li><a href="#">🔍</a></li>
+    <li><a href="#">🛒</a></li>
+    <li><a href="#">💳</a></li>
+    <li><a href="#">???</a></li>
+  </ul>
+</nav>
+
+<!-- BROKEN: Auto-rotating carousel, no controls, fast speed -->
+<div class="carousel-container">
+  <div class="carousel-track">
+    <div class="carousel-slide">🐱 MOCHI IS BEST CAT FIGHT ME ON THIS 🐱</div>
+    <div class="carousel-slide">☕ OUR COFFEE IS LUKEWARM BUT THE CATS ARE HOT ☕</div>
+    <div class="carousel-slide">🚨 ONLY 2 SEATS LEFT BOOK NOW THIS IS NOT A DRILL 🚨</div>
+    <div class="carousel-slide">💀 YOUR CATS NEED YOU. COME. NOW. OR THEY WILL BE SAD 💀</div>
+    <div class="carousel-slide">🎊 CONGRATULATIONS YOU SAW SLIDE 5 YOU WIN NOTHING 🎊</div>
+  </div>
+</div>
+
+<!-- BROKEN: 4-column chaotic grid -->
+<div class="chaos-grid">
+
+  <!-- Column 1: sidebar chaos -->
+  <div class="col1">
+    <h2>😱 STUFF 😱</h2>
+    <div style="font-size:35px; animation:spin 0.8s linear infinite; display:block; text-align:center;">🐱</div>
+
+    <!-- BROKEN: Table with color-only information (no text labels) -->
+    <table>
+      <tr><th>Day</th><th>🟢?</th></tr>
+      <tr><td>Mon</td><td style="background:#ff0000"><!-- red = closed, no text --></td></tr>
+      <tr><td>Tue</td><td>✓</td></tr>
+      <tr><td>Wed</td><td>✓</td></tr>
+      <tr><td>Thu</td><td>✓</td></tr>
+      <tr><td>Fri</td><td>✓</td></tr>
+      <tr><td>Sat</td><td style="background:#ffff00">??</td></tr>
+      <tr><td>Sun</td><td>✓</td></tr>
+    </table>
+    <p style="font-size:7px;">(green means open, red means closed, yellow means ??? — no legend provided)</p>
+
+    <!-- BROKEN: Fake video autoplay, with sound "on" -->
+    <div class="fake-video">
+      <div class="video-noise"></div>
+      <div class="fake-video-content">
+        ▶▶▶ AUTOPLAY VIDEO 🔊🔊🔊<br>
+        SOUND: MAX VOLUME<br>
+        <span style="font-size:8px;">no mute button because we respect you 😈</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 2: main content chaos -->
+  <div class="col2">
+    <h2 style="font-size:18px; animation:shake 1s infinite; display:inline-block;">WELCOME TO THE CHAOS CAFE!!!!!</h2>
+    <span class="bouncer">🐱</span><span class="wiggler">🐾</span><span class="spinner">⭐</span>
+
+    <!-- BROKEN: One enormous paragraph, no chunking, idioms everywhere, line-height 1.1, justified -->
+    <p style="font-size:10px; text-align:justify; line-height:1.1; color:#330000;">
+      Well butter my biscuit and call me a kitten because you have stumbled upon the most absolutely bonkers cat café that has ever graced this fair city with its presence and let me tell you if you're not already over the moon about it you will be once you step through our doors because we've got cats coming out of our ears (metaphorically obviously we do not literally have cats in our ears that would be a health code violation) and coffee that will knock your socks off (again metaphorically although we cannot guarantee your socks will remain on your feet during the entirety of your visit especially if Mochi decides she wants to sit on your feet which she absolutely will because that's just the kind of gal she is a real go-getter a mover and a shaker a cat who knows what she wants and goes for it and what she wants is YOUR FEET and she WILL have them so consider yourself warned) and food that is hot off the press (the culinary press not the printing press although wouldn't it be wild if you could print food?) and overall a vibe that is simply unmatched in the greater metropolitan area and possibly the entire universe pending further scientific investigation. So what are you waiting for? The early bird gets the worm but the on-time cat person gets the best seat by the window where Biscuit naps twelve hours a day and he smells GREAT (citation needed).
+    </p>
+
+    <!-- BROKEN: Neon rainbow button that moves on hover -->
+    <div style="margin:4px 0;">
+      <button class="crazy-btn" onclick="alert('MEOOOOW!!!! YOU CLICKED THE BUTTON!!!! NOW WHAT?!?! WE HAVE NO IDEA WHAT THIS BUTTON DOES!!!!!')">
+        <span class="bouncer">🐾</span> CLICK ME I DARE YOU <span class="bouncer">🐾</span>
+      </button>
+    </div>
+
+    <!-- BROKEN: Second contradicting CTA with ambiguous label -->
+    <div style="margin:3px 0; display:flex; gap:3px;">
+      <button style="background:#00ff00; color:#0000ff; border:3px dashed #ff0000; font-family:'Creepster',cursive; font-size:10px; padding:3px 6px; animation:jelly 0.4s infinite; cursor:pointer;" onclick="alert('Which one? We don\'t know either.')">Yes / No / Maybe</button>
+      <button style="background:#ff00ff; color:#ffff00; border:3px solid #000; font-family:'Pacifico',cursive; font-size:10px; padding:3px 6px; animation:zoom 1s infinite; cursor:pointer;">Click here</button>
+      <button style="background:#0000ff; color:#ff0000; border:3px dotted #ffff00; font-family:'Boogaloo',cursive; font-size:10px; padding:3px 6px; animation:wiggle 0.5s infinite; cursor:pointer;">Do the thing</button>
+    </div>
+
+    <!-- BROKEN: Cat list with zero info, just blinking emojis -->
+    <h3 style="animation:colortext 0.5s infinite; font-size:13px;">OUR CATS (PROBABLY):</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:2px; font-size:25px;">
+      <span class="spinner" title="Mochi (hover for name — no visible label)">🐱</span>
+      <span class="bouncer" title="Pepper">🐈‍⬛</span>
+      <span class="wiggler" title="Biscuit">🐈</span>
+      <span class="spinner-rev" title="Luna">🐱</span>
+      <span class="bouncer" title="Dumpling">🐈</span>
+      <span class="wiggler" title="Soba">🐈‍⬛</span>
+      <span class="spinner" title="Pretzel">🐱</span>
+      <span class="bouncer" title="Miso">😸</span>
+    </div>
+    <!-- BROKEN: color-only signal for cat availability -->
+    <p style="font-size:8px;">🟢=available 🔴=hiding 🟡=sleeping (???)</p>
+  </div>
+
+  <!-- Column 3: menu chaos -->
+  <div class="col3">
+    <h2 style="animation:glitch 2s infinite; font-size:16px;">MENUE??? FOOD??</h2>
+
+    <!-- BROKEN: Menu in tiny confusing table -->
+    <table style="font-size:8px;">
+      <tr><th>ITEM!!!</th><th>COST $$$</th><th>WORTH?</th></tr>
+      <tr><td>Coffee (?)</td><td>€2-8 (depends)</td><td>🔥</td></tr>
+      <tr><td>Tea (warm liquid)</td><td>€3 or €5</td><td>💀</td></tr>
+      <tr><td>Toast type thing</td><td>€6.50 ish</td><td>🐱</td></tr>
+      <tr><td>The pastry</td><td>€3.80 maybe</td><td>⭐⭐⭐</td></tr>
+      <tr><td>Soup of day (??)</td><td>€6 (today)</td><td>🤷</td></tr>
+      <tr><td>Cat-shaped cookie</td><td>FREE!* *not free</td><td>💯</td></tr>
+    </table>
+    <p style="font-size:7px; animation:blink 1s infinite;">*prices may change without notice. We don't know what the prices are today specifically. Just come and find out lol.</p>
+
+    <!-- BROKEN: Low-contrast text for "important" allergy info -->
+    <p class="ghost-text">ALLERGEN WARNING: our food contains gluten, dairy, nuts, cats, and existential dread. Ask staff for details. Staff may or may not know. (almost invisible text)</p>
+
+    <!-- BROKEN: section with random font change mid-paragraph -->
+    <p style="font-size:10px; text-align:justify; line-height:1.0;">
+      We <span style="font-family:'Ribeye Marrow',cursive; font-size:16px;">LOVE</span> making <span style="font-family:'Pacifico',cursive; font-size:8px;">coffee</span> for <span style="font-family:'Creepster',cursive; color:#ff0000; font-size:14px;">YOU</span> even though we <span style="font-family:'Permanent Marker',cursive; font-size:11px;">sometimes</span> <span style="font-family:'Boogaloo',cursive; color:#0000ff;">forget</span> <span style="font-size:6px;">how</span> <span style="font-size:20px;">coffee</span> <span style="animation:spin 1s linear infinite; display:inline-block;">works</span>.
+    </p>
+  </div>
+
+  <!-- Column 4: tiny sidebar with random stuff -->
+  <div class="sidebar-chaos">
+    <p>SIDEBAR</p>
+    <p>INFO??</p>
+    <div style="font-size:30px; animation:spin 0.5s linear infinite; text-align:center;">🐾</div>
+    <p style="font-size:7px; animation:colortext 0.5s infinite;">BOOK NOW OR MAYBE LATER IDK YOUR CHOICE I GUESS BUT ALSO HURRY UP</p>
+    <div style="font-size:25px; animation:bounce 0.4s infinite; text-align:center;">💀</div>
+    <p style="font-size:6px;">⚠️ seats are limited by the laws of physics</p>
+    <div style="height:2px; background:repeating-linear-gradient(90deg,#ff0000 0,#ff0000 5px,#00ff00 5px,#00ff00 10px);"></div>
+    <p style="font-size:7px; animation:blink 0.3s infinite; color:#ffff00;">CLICK SOMETHING</p>
+    <p style="font-size:7px; animation:blink 0.5s infinite; color:#00ffff;">ANYTHING</p>
+    <p style="font-size:7px; animation:blink 0.7s infinite; color:#ff00ff;">PLEASE</p>
+  </div>
+
+</div>
+
+<!-- BROKEN: Booking form — all rules violated -->
+<div class="bad-form-wrap">
+  <h2 style="animation:shake 0.5s infinite, colortext 0.3s infinite; display:inline-block; font-size:18px;">⏰ BOOK A TABLE (YOU HAVE 45 SECONDS!!!) ⏰</h2>
+
+  <!-- BROKEN: Timer creating severe anxiety -->
+  <div class="form-timer" id="crazyTimer">45</div>
+  <p style="font-size:10px; animation:blink 0.5s infinite; color:#ff0000; text-align:center;">⚠ FORM AUTO-SUBMITS WHEN TIMER HITS ZERO — NO CONFIRMATION SCREEN ⚠</p>
+
+  <!-- BROKEN: 4-column form, no labels, placeholders only -->
+  <div class="bad-form">
+    <!-- No labels anywhere. Placeholder disappears on type. -->
+    <input type="text" placeholder="ur name??" style="grid-column:1">
+    <input type="email" placeholder="email (??)" style="grid-column:2">
+    <input type="text" placeholder="phone maybe" style="grid-column:3">
+    <input type="text" placeholder="???" style="grid-column:4">
+
+    <textarea placeholder="write ur request here or not idk" rows="2" style="grid-column:1/3; font-family:inherit; font-size:9px;"></textarea>
+
+    <select style="grid-column:3; font-family:inherit; font-size:9px;">
+      <option>how many ppl</option>
+      <option>1 (lonely)</option>
+      <option>2 (maybe date??)</option>
+      <option>3-4 (gang)</option>
+      <option>5+ (invasion)</option>
+    </select>
+
+    <!-- BROKEN: CAPTCHA with zero accessibility -->
+    <div style="grid-column:4; background:#000; padding:3px; text-align:center;">
+      <div style="color:#fff; font-size:18px; font-family:monospace; letter-spacing:6px; filter:blur(2px) contrast(200%) hue-rotate(90deg);">K9xP2</div>
+      <input type="text" placeholder="type the thing" style="width:100%; font-size:8px; margin-top:2px;">
+      <p style="font-size:6px; color:#888; margin:0;">no audio option. refresh changes it but you lose your form.</p>
+    </div>
+  </div>
+
+  <!-- BROKEN: ambiguous buttons -->
+  <div style="margin-top:5px; display:flex; gap:3px; flex-wrap:wrap;">
+    <button onclick="triggerBadSubmit()" style="background:#ff0000; color:#ffff00; border:3px solid #000; font-family:'Creepster',cursive; font-size:12px; padding:4px 10px; animation:blink 0.5s infinite; cursor:pointer;">SEND!!! DO IT!!! NOW!!!</button>
+    <button onclick="alert('same thing')" style="background:#00ff00; color:#0000ff; border:3px solid #ff00ff; font-family:'Permanent Marker',cursive; font-size:11px; padding:4px 10px; animation:wiggle 0.5s infinite; cursor:pointer;">Submit? / Cancel? / Both?</button>
+    <button style="background:#0000ff; color:#ffff00; border:none; font-family:'Pacifico',cursive; font-size:10px; padding:4px 10px; cursor:pointer; animation:zoom 0.8s infinite;">Do The Thing</button>
+  </div>
+
+  <!-- BROKEN: Error is color-only div, invisible text -->
+  <div id="badError" style="display:none; background:#ff0000; color:#ff0000; padding:3px; margin-top:3px; font-size:10px;">
+    WRONG!!! EVERYTHING IS WRONG!!! FIX IT!!! (but we won't tell you what or how)
+  </div>
+</div>
+
+<!-- BROKEN: Ghost footer — essentially invisible -->
+<div class="bad-footer">
+  footer text that exists but you probably cannot read it contrast ratio is about 1.07:1 which is worse than looking at a blank white page © 2024 chaos cat cafe or whatever all rights reserved maybe some rights might not be reserved we honestly haven't checked with a lawyer contact us at some email address that we haven't included because who needs contact information anyway not us apparently
+</div>
+
+<script>
+  /* Countdown timer — creating maximum anxiety */
+  let t = 45;
+  const timerEl = document.getElementById('crazyTimer');
+  const iv = setInterval(() => {
+    t--;
+    timerEl.textContent = t;
+    if (t <= 10) timerEl.classList.add('panic');
+    if (t <= 0) {
+      clearInterval(iv);
+      timerEl.textContent = '💀 SUBMITTED AUTOMATICALLY!!! 💀';
+      document.querySelector('.bad-form').style.pointerEvents = 'none';
+      document.querySelector('.bad-form').style.opacity = '0.3';
+      alert('YOUR FORM WAS AUTO-SUBMITTED!!!\n\nWe have no idea what data we collected.\n\nError code: CAT_404\n\nPlease start over.\n\n(The form has been reset. Also we may have sent it. Or not. We\'re not sure.)');
+    }
+  }, 1000);
+
+  /* Bad error trigger */
+  function triggerBadSubmit() {
+    const err = document.getElementById('badError');
+    err.style.display = 'block';
+    // BROKEN: vague alert dialog
+    setTimeout(() => {
+      alert('Error!\n\nSomething went wrong with your form.\n\nPlease try again.\n\nError reference: #?????\n\n(No further information available.)');
+    }, 100);
+    // BROKEN: color-only error on first input
+    document.querySelector('.bad-form input').style.border = '4px solid #ff0000';
+    document.querySelector('.bad-form input').style.background = '#ffeeee';
+    // no accessible error message, no aria-invalid, no focus management
+  }
+</script>
+</body>
+</html>

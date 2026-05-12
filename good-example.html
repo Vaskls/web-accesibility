@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purrfect Cat Café — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════════════
+       AUTISM-FRIENDLY DESIGN — Cat Café theme
+       Rules: same 29 as site-good, new visual theme
+       ══════════════════════════════════════════════ */
+
+    :root {
+      --bg:        #f7f3ec;   /* warm cream — not pure white */
+      --bg2:       #eee7d8;
+      --bg-card:   #ffffff;
+      --text:      #2b2118;   /* warm dark brown — contrast ≈ 10:1 */
+      --muted:     #534639;
+      --accent:    #9c6b3c;   /* muted warm terracotta / caramel */
+      --accent-d:  #7a5030;
+      --teal:      #4a8080;   /* muted teal — second accent */
+      --teal-d:    #326666;
+      --border:    #d4c8b4;
+      --focus:     #4a8080;
+      --error:     #a03030;
+      --success:   #3a7055;
+      --radius:    8px;
+      --font:      'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --shadow:    0 1px 3px rgba(43,33,24,0.07), 0 2px 10px rgba(43,33,24,0.05);
+    }
+
+    [data-theme="dark"] {
+      --bg:       #1c1814;
+      --bg2:      #262018;
+      --bg-card:  #2e2620;
+      --text:     #ede5d8;
+      --muted:    #b0a090;
+      --border:   #4a3e30;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .skip-link {
+      position: absolute; top: -100px; left: 1rem;
+      background: var(--accent); color: #fff;
+      padding: 0.5rem 1rem; border-radius: var(--radius);
+      font-weight: 700; text-decoration: none; z-index: 1000;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+    /* ── Header ── */
+    header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.85rem 1.5rem; max-width: 920px; margin: 0 auto; gap: 1rem;
+    }
+    .logo {
+      font-weight: 700; font-size: 1.15rem; color: var(--text);
+      text-decoration: none; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .logo-icon { font-size: 1.5rem; }
+
+    nav { display: flex; gap: 0.2rem; align-items: center; }
+    nav a {
+      font-size: 0.92rem; font-weight: 700; color: var(--muted);
+      text-decoration: none; padding: 0.45rem 0.75rem;
+      border-radius: var(--radius); border: 2px solid transparent;
+      transition: color 0.15s, background 0.15s, border-color 0.15s;
+    }
+    nav a:hover { color: var(--accent); background: rgba(156,107,60,0.08); }
+    nav a[aria-current="page"] {
+      color: var(--accent-d); background: rgba(156,107,60,0.12);
+      border-color: var(--accent);
+    }
+
+    .header-controls { display: flex; gap: 0.5rem; }
+    .icon-btn {
+      display: flex; align-items: center; gap: 0.35rem;
+      background: none; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 0.35rem 0.65rem; cursor: pointer; font-size: 0.8rem;
+      font-family: var(--font); color: var(--muted);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .icon-btn:hover { border-color: var(--accent); color: var(--accent-d); }
+
+    .breadcrumb {
+      padding: 0.5rem 1.5rem; font-size: 0.82rem; color: var(--muted);
+      max-width: 920px; margin: 0 auto;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .breadcrumb a { color: var(--teal); text-decoration: underline; }
+
+    /* ── Main ── */
+    main { padding: 2.5rem 1.5rem 4rem; max-width: 920px; margin: 0 auto; }
+    section + section { margin-top: 3.5rem; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 2.5rem 2.2rem;
+      display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;
+    }
+    .hero-text { flex: 1; min-width: 240px; }
+    .hero-visual {
+      flex-shrink: 0; width: 160px; height: 160px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 5rem;
+    }
+    .hero-tag {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent-d); margin-bottom: 0.7rem;
+    }
+
+    h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; color: var(--text); margin-bottom: 1rem; }
+    h2 { font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 0.8rem; }
+    h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+
+    p { max-width: 65ch; text-align: left; color: var(--muted); margin-bottom: 0.9rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .divider { width: 44px; height: 3px; background: var(--accent); border-radius: 2px; margin: 1rem 0 1.2rem; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      background: var(--accent); color: #fff;
+      font-family: var(--font); font-size: 0.95rem; font-weight: 700;
+      padding: 0.65rem 1.35rem; border: 2px solid transparent;
+      border-radius: var(--radius); text-decoration: none; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: var(--accent-d); }
+    .btn-teal { background: var(--teal); }
+    .btn-teal:hover { background: var(--teal-d); }
+    .btn-outline {
+      background: transparent; color: var(--accent-d); border-color: var(--accent);
+    }
+    .btn-outline:hover { background: rgba(156,107,60,0.08); }
+
+    /* ── Cards ── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.4rem 1.3rem;
+      border-top: 3px solid var(--accent);
+      box-shadow: var(--shadow);
+    }
+    .card-teal { border-top-color: var(--teal); }
+    .card-warm { border-top-color: #c8844a; }
+    .card-icon { font-size: 1.8rem; margin-bottom: 0.7rem; display: block; }
+
+    /* ── Cat list ── */
+    .cat-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem;
+    }
+    .cat-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 1.2rem 1rem; text-align: center; box-shadow: var(--shadow);
+    }
+    .cat-emoji { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+    .cat-name { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+    .cat-desc { font-size: 0.82rem; color: var(--muted); margin-top: 0.25rem; max-width: none; }
+
+    /* ── Info list ── */
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .info-list li {
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      font-size: 0.94rem; color: var(--muted);
+    }
+    .info-list li::before {
+      content: ''; width: 6px; height: 6px; background: var(--accent);
+      border-radius: 50%; flex-shrink: 0; margin-top: 0.55rem;
+    }
+
+    /* ── Callout ── */
+    .callout {
+      background: rgba(156,107,60,0.07); border: 1px solid rgba(156,107,60,0.18);
+      border-left: 4px solid var(--accent); border-radius: var(--radius);
+      padding: 0.95rem 1.2rem; margin-top: 1rem;
+    }
+    .callout p { font-size: 0.88rem; }
+
+    /* ── Menu ── */
+    .menu-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .menu-category h3 { margin-bottom: 0.75rem; }
+    .menu-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 0.45rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.93rem;
+    }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-price { font-weight: 700; color: var(--accent-d); flex-shrink: 0; margin-left: 1rem; }
+
+    /* ── Form ── */
+    .form-section { max-width: 540px; }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1.4rem; }
+
+    label { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+    .required-mark { color: var(--error); margin-left: 2px; }
+    .help-text { font-size: 0.8rem; color: var(--muted); }
+
+    input, textarea, select {
+      font-family: var(--font); font-size: 1rem;
+      background: var(--bg-card); color: var(--text);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 0.6rem 0.8rem; width: 100%;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--focus);
+      box-shadow: 0 0 0 3px rgba(74,128,128,0.2);
+      outline: none;
+    }
+    textarea { resize: vertical; min-height: 90px; }
+
+    .field-error {
+      display: none; font-size: 0.82rem; color: var(--error);
+      font-weight: 700; align-items: center; gap: 0.3rem;
+    }
+    .field-error.visible { display: flex; }
+    input[aria-invalid="true"] { border-color: var(--error); border-width: 2px; }
+
+    .form-confirm {
+      display: none; background: var(--bg2);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.5rem; margin-top: 1.5rem;
+    }
+    .form-confirm.visible { display: block; }
+
+    .alert { display: none; padding: 1rem 1.2rem; border-radius: var(--radius); font-weight: 700; margin-top: 1rem; align-items: center; gap: 0.5rem; }
+    .alert.visible { display: flex; }
+    .alert-success { background: #e6f4ec; color: var(--success); border: 1px solid #b2d8be; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--muted);
+    }
+    main a { color: var(--teal); text-decoration: underline; }
+    main a:hover { color: var(--teal-d); }
+
+    @media (max-width: 600px) {
+      .hero { flex-direction: column; }
+      .hero-visual { width: 120px; height: 120px; font-size: 3.5rem; }
+      .menu-section { grid-template-columns: 1fr; }
+      nav { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Purrfect Cat Café — home">
+      <span class="logo-icon" aria-hidden="true">🐱</span>
+      Purrfect Cat Café
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="#cats">Our cats</a>
+      <a href="#menu">Menu</a>
+      <a href="#book">Book a visit</a>
+    </nav>
+
+    <div class="header-controls">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <span id="themeLabel">Dark mode</span>
+      </button>
+      <button class="icon-btn" id="motionToggle" aria-label="Toggle reduced motion" aria-pressed="false">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="10" y1="15" x2="10" y2="9"/><line x1="14" y1="15" x2="14" y2="9"/>
+        </svg>
+        <span>Reduce motion</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Welcome</span>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section aria-labelledby="hero-heading">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="hero-tag" aria-hidden="true">Coffee · Cats · Calm</p>
+        <h1 id="hero-heading">A quiet café where cats live and you visit</h1>
+        <div class="divider" aria-hidden="true"></div>
+        <p>Purrfect is a cat café in the city centre. We have 8 resident cats and a full coffee menu. You can sit, drink, and spend time with the cats. No loud music. No crowded rush hours.</p>
+        <p>All our cats are rescue animals. They live here permanently. Visits are calm and at your own pace.</p>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.5rem;">
+          <a href="#book" class="btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book a table
+          </a>
+          <a href="#cats" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Meet our cats
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Illustration of a cat">🐱</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section aria-labelledby="about-heading">
+    <h2 id="about-heading">About the café</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p>We opened in 2021. The café has two quiet rooms and an outdoor terrace. The cats move freely. You do not need to interact with them — they will come to you if they want to.</p>
+    <p>We ask visitors not to wake sleeping cats, not to use flash photography, and to keep voices calm. This keeps the environment peaceful for both cats and people.</p>
+
+    <div class="cards" style="margin-top: 1.5rem;">
+      <div class="card">
+        <span class="card-icon" aria-hidden="true">🕐</span>
+        <h3>Opening hours</h3>
+        <ul class="info-list" style="margin-top:0.4rem;">
+          <li>Tuesday – Friday: 10:00 – 20:00</li>
+          <li>Saturday – Sunday: 10:00 – 22:00</li>
+          <li>Monday: closed (cat rest day)</li>
+        </ul>
+      </div>
+      <div class="card card-teal">
+        <span class="card-icon" aria-hidden="true">📍</span>
+        <h3>Where we are</h3>
+        <ul class="info-list" style="margin-top:0.4rem;">
+          <li>22 Maple Lane, West Quarter</li>
+          <li>5 minutes from Central Station</li>
+          <li>Tram stop: Maple Lane (lines 3, 7)</li>
+        </ul>
+      </div>
+      <div class="card card-warm">
+        <span class="card-icon" aria-hidden="true">ℹ️</span>
+        <h3>Good to know</h3>
+        <ul class="info-list" style="margin-top:0.4rem;">
+          <li>Booking recommended (especially weekends)</li>
+          <li>Minimum visit: 45 minutes</li>
+          <li>Allergen menu available on request</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATS -->
+  <section id="cats" aria-labelledby="cats-heading">
+    <h2 id="cats-heading">Our eight cats</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p>Each cat has a different personality. The staff can tell you who likes to cuddle and who prefers to watch from a distance.</p>
+
+    <div class="cat-grid" style="margin-top: 1.2rem;">
+      <div class="cat-card">
+        <span class="cat-emoji" aria-hidden="true">🐱</span>
+        <div class="cat-name">Mochi</div>
+        <div class="cat-desc">Orange tabby. Very friendly. Loves laps.</div>
+      </div>
+      <div class="cat-card">
+        <span class="cat-emoji" aria-hidden="true">🐈‍⬛</span>
+        <div class="cat-name">Pepper</div>
+        <div class="cat-desc">Black cat. Shy at first. Loves chin scratches.</div>
+      </div>
+      <div class="cat-card">
+        <span class="cat-emoji" aria-hidden="true">🐈</span>
+        <div class="cat-name">Biscuit</div>
+        <div class="cat-desc">Grey and white. Sleeps most of the day.</div>
+      </div>
+      <div class="cat-card">
+        <span class="cat-emoji" aria-hidden="true">🐱</span>
+        <div class="cat-name">Luna</div>
+        <div class="cat-desc">Tortoiseshell. Independent. Will approach when ready.</div>
+      </div>
+      <div class="cat-card">
+        <span class="cat-emoji" aria-hidden="true">🐈</span>
+        <div class="cat-name">Dumpling</div>
+        <div class="cat-desc">Fluffy white. Likes to sit near windows.</div>
+      </div>
+      <div class="cat-card">
+        <span class="cat-emoji" aria-hidden="true">🐈‍⬛</span>
+        <div class="cat-name">Soba</div>
+        <div class="cat-desc">Tuxedo cat. Curious and playful.</div>
+      </div>
+      <div class="cat-card">
+        <span class="cat-emoji" aria-hidden="true">🐱</span>
+        <div class="cat-name">Pretzel</div>
+        <div class="cat-desc">Siamese mix. Vocal. Asks for attention loudly.</div>
+      </div>
+      <div class="cat-card">
+        <span class="cat-emoji" aria-hidden="true">🐈</span>
+        <div class="cat-name">Miso</div>
+        <div class="cat-desc">Tabby kitten. Energetic in the mornings.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" aria-labelledby="menu-heading">
+    <h2 id="menu-heading">Menu</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p>All prices include the café entry fee. No extra charge for spending time with the cats.</p>
+
+    <div class="menu-section" style="margin-top: 1.2rem;">
+      <div class="menu-category">
+        <h3>Hot drinks</h3>
+        <div class="menu-item"><span>Espresso</span><span class="menu-price">€2.80</span></div>
+        <div class="menu-item"><span>Flat white</span><span class="menu-price">€4.20</span></div>
+        <div class="menu-item"><span>Matcha latte</span><span class="menu-price">€4.50</span></div>
+        <div class="menu-item"><span>Chamomile tea</span><span class="menu-price">€3.20</span></div>
+        <div class="menu-item"><span>Hot chocolate</span><span class="menu-price">€4.00</span></div>
+      </div>
+      <div class="menu-category">
+        <h3>Food</h3>
+        <div class="menu-item"><span>Toasted sandwich</span><span class="menu-price">€6.50</span></div>
+        <div class="menu-item"><span>Avocado toast</span><span class="menu-price">€7.00</span></div>
+        <div class="menu-item"><span>Cinnamon roll</span><span class="menu-price">€3.80</span></div>
+        <div class="menu-item"><span>Paw-print cookie</span><span class="menu-price">€2.50</span></div>
+        <div class="menu-item"><span>Seasonal soup</span><span class="menu-price">€6.00</span></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>🌱 <strong>We have plant-based milk options</strong> (oat, soy, almond) at no extra cost. Please tell us about allergies when you order.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section id="book" aria-labelledby="book-heading">
+    <h2 id="book-heading">Book a table</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p>Fill in this form to book a visit. We will confirm your booking by email within 4 hours. There is no time limit to complete this form.</p>
+
+    <div class="form-section" style="margin-top:1.5rem;">
+      <form id="bookForm" novalidate aria-describedby="form-note">
+        <p id="form-note" style="font-size:0.85rem; color:var(--muted); margin-bottom:1.2rem;">
+          Fields marked <span style="color:var(--error); font-weight:700;" aria-label="required">*</span> are required.
+        </p>
+
+        <div class="form-group">
+          <label for="name">Your name <span class="required-mark" aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" autocomplete="name"
+                 aria-required="true" aria-describedby="name-err">
+          <span class="field-error" id="name-err" role="alert">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Please enter your name.
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="bemail">Email address <span class="required-mark" aria-hidden="true">*</span></label>
+          <input type="email" id="bemail" name="email" autocomplete="email"
+                 aria-required="true" aria-describedby="email-err email-help">
+          <span class="help-text" id="email-help">We will send your booking confirmation here.</span>
+          <span class="field-error" id="email-err" role="alert">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Please enter a valid email address (example: name@mail.com).
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="bdate">Preferred date <span class="required-mark" aria-hidden="true">*</span></label>
+          <input type="date" id="bdate" name="date" aria-required="true" aria-describedby="date-err date-help">
+          <span class="help-text" id="date-help">We are open Tuesday to Sunday. We are closed on Monday.</span>
+          <span class="field-error" id="date-err" role="alert">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Please select a date.
+          </span>
+        </div>
+
+        <fieldset style="border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.1rem; margin-bottom:1.4rem;">
+          <legend style="font-weight:700; font-size:0.9rem; padding:0 0.4rem; color:var(--text);">Number of guests</legend>
+          <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
+            <label style="display:flex; align-items:center; gap:0.5rem; font-weight:400; cursor:pointer;"><input type="radio" name="guests" value="1" style="width:auto;"> 1 person</label>
+            <label style="display:flex; align-items:center; gap:0.5rem; font-weight:400; cursor:pointer;"><input type="radio" name="guests" value="2" style="width:auto;"> 2 people</label>
+            <label style="display:flex; align-items:center; gap:0.5rem; font-weight:400; cursor:pointer;"><input type="radio" name="guests" value="3-4" style="width:auto;"> 3–4 people</label>
+            <label style="display:flex; align-items:center; gap:0.5rem; font-weight:400; cursor:pointer;"><input type="radio" name="guests" value="5+" style="width:auto;"> 5 or more (group booking)</label>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="notes">Any notes <span style="font-weight:400; font-size:0.82rem; color:var(--muted);">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3"
+                    placeholder="Example: allergy information, wheelchair access, specific seating preference…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-teal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Review booking
+        </button>
+      </form>
+
+      <div class="form-confirm" id="confirmBox" role="dialog" aria-labelledby="confirm-h" aria-modal="true">
+        <h3 id="confirm-h">Check your booking details</h3>
+        <div id="confirmContent" style="margin:1rem 0; font-size:0.92rem; color:var(--muted);"></div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+          <button class="btn btn-teal" id="confirmSend">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Confirm booking
+          </button>
+          <button class="btn btn-outline" id="confirmBack">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            Go back and edit
+          </button>
+        </div>
+      </div>
+
+      <div class="alert alert-success" id="successAlert" role="status">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        Your booking request was sent. We will confirm by email within 4 hours.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2024 Purrfect Cat Café · 22 Maple Lane · <a href="mailto:hello@purrfect.example">hello@purrfect.example</a></p>
+  <p style="margin-top:0.4rem;">This site follows autism-friendly web design guidelines.</p>
+</footer>
+
+<script>
+  const themeBtn = document.getElementById('themeToggle');
+  const themeLabel = document.getElementById('themeLabel');
+  themeBtn.addEventListener('click', () => {
+    const isDark = document.body.dataset.theme === 'dark';
+    document.body.dataset.theme = isDark ? '' : 'dark';
+    themeBtn.setAttribute('aria-pressed', !isDark);
+    themeLabel.textContent = isDark ? 'Dark mode' : 'Light mode';
+  });
+
+  const motionBtn = document.getElementById('motionToggle');
+  let motionReduced = false;
+  motionBtn.addEventListener('click', () => {
+    motionReduced = !motionReduced;
+    motionBtn.setAttribute('aria-pressed', motionReduced);
+    const id = 'reduceMotionOverride';
+    if (motionReduced) {
+      const s = document.createElement('style');
+      s.id = id;
+      s.textContent = '*, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }';
+      document.head.appendChild(s);
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    }
+  });
+
+  const nameI  = document.getElementById('name');
+  const emailI = document.getElementById('bemail');
+  const dateI  = document.getElementById('bdate');
+
+  function showErr(inp, errEl, msg) { inp.setAttribute('aria-invalid','true'); errEl.textContent = '⚠ ' + msg; errEl.classList.add('visible'); }
+  function clearErr(inp, errEl)     { inp.removeAttribute('aria-invalid'); errEl.classList.remove('visible'); }
+
+  nameI.addEventListener('blur',  () => nameI.value.trim()  ? clearErr(nameI,  document.getElementById('name-err'))  : showErr(nameI,  document.getElementById('name-err'),  'Please enter your name.'));
+  emailI.addEventListener('blur', () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailI.value) ? clearErr(emailI, document.getElementById('email-err')) : showErr(emailI, document.getElementById('email-err'), 'Please enter a valid email address (example: name@mail.com).'));
+  dateI.addEventListener('blur',  () => dateI.value ? clearErr(dateI, document.getElementById('date-err')) : showErr(dateI, document.getElementById('date-err'), 'Please select a date.'));
+
+  const form = document.getElementById('bookForm');
+  const confirmBox = document.getElementById('confirmBox');
+  const successAlert = document.getElementById('successAlert');
+  const guestVal = () => { const r = document.querySelector('input[name="guests"]:checked'); return r ? r.value : '(not selected)'; };
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let ok = true;
+    if (!nameI.value.trim())  { showErr(nameI, document.getElementById('name-err'), 'Please enter your name.'); ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailI.value)) { showErr(emailI, document.getElementById('email-err'), 'Please enter a valid email address.'); ok = false; }
+    if (!dateI.value) { showErr(dateI, document.getElementById('date-err'), 'Please select a date.'); ok = false; }
+    if (!ok) { form.querySelector('[aria-invalid="true"]')?.focus(); return; }
+
+    document.getElementById('confirmContent').innerHTML =
+      `<strong>Name:</strong> ${nameI.value.trim()}<br>
+       <strong>Email:</strong> ${emailI.value.trim()}<br>
+       <strong>Date:</strong> ${dateI.value}<br>
+       <strong>Guests:</strong> ${guestVal()}<br>
+       <strong>Notes:</strong> ${document.getElementById('notes').value.trim() || '—'}`;
+    confirmBox.classList.add('visible');
+    confirmBox.querySelector('button').focus();
+  });
+
+  document.getElementById('confirmSend').addEventListener('click', () => {
+    confirmBox.classList.remove('visible');
+    form.reset(); successAlert.classList.add('visible'); successAlert.focus();
+  });
+  document.getElementById('confirmBack').addEventListener('click', () => {
+    confirmBox.classList.remove('visible'); nameI.focus();
+  });
+</script>
+</body>
+</html>
